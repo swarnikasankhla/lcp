@@ -48,7 +48,7 @@ class CompressedStringIterator {
     }
 }
 
-class Pair<String, Integer>{
+ class Pair<String, Integer>{
     char character;
     int count;
 
