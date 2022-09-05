@@ -12,14 +12,13 @@ class SnakeGame {
     Queue<Pair<Integer, Integer>> foodLocation;
     Set<Pair<Integer, Integer>> snakeLocation;
 
-    private static final Map<String, Pair<Integer, Integer>> directions = new HashMap<>(){
-        {
-            put("U", new Pair(-1,0));
-            put("D", new Pair(1,0));
-            put("L", new Pair(0,-1));
-            put("R", new Pair(0,1));
-        }
-    };
+    private static final Map<String, Pair<Integer, Integer>> directions = new HashMap<>();
+    static {
+        directions.put("U", new Pair(-1,0));
+        directions.put("D", new Pair(1,0));
+        directions.put("L", new Pair(0,-1));
+        directions.put("R", new Pair(0,1));
+    }
 
     public SnakeGame(int width, int height, int[][] food) {
         row = height;

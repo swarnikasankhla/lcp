@@ -14,7 +14,7 @@ class CompressedStringIterator {
 
     public char next() {
         char next = ' ';
-        if(compressed.size() > 0){
+        if(!compressed.isEmpty()){
             Pair<String, Integer> charCount = compressed.pollFirst();
             if(charCount.getCount() > 1){
                 compressed.offerFirst(new Pair(charCount.getCharacter(), charCount.getCount()-1));
@@ -25,12 +25,7 @@ class CompressedStringIterator {
     }
 
     public boolean hasNext() {
-        if(compressed.size() > 0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return !compressed.isEmpty();
     }
 
     private void enqueueCharacters(){

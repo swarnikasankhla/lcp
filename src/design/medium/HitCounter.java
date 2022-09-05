@@ -1,13 +1,14 @@
 package design.medium;
 
 import javafx.util.Pair;
+import lombok.Data;
 
 import java.util.Deque;
 import java.util.LinkedList;
-
+@Data
 class HitCounter {
     Deque<Pair<Integer, Integer>> hits;
-    final int HIT_WINDOW = 300;
+    static final int HIT_WINDOW = 300;
     int totalHits;
     public HitCounter() {
         hits = new LinkedList<>();
@@ -20,7 +21,7 @@ class HitCounter {
             hitCount = hits.pollLast().getValue();
         }
         hitCount++;
-        hits.offerLast(new Pair(timestamp, hitCount));
+        hits.offerLast(new Pair<Integer, Integer>(timestamp, hitCount));
         totalHits++;
     }
 
